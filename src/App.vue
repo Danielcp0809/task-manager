@@ -1,25 +1,29 @@
 <template>
   <div class="container">
     <Header title="Task manager" />
+    <Tasks :tasks="tasks"/>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Tasks from "./components/Tasks.vue";
+
 
 export default {
   name: "App",
   components: {
     Header,
-  },
+    Tasks
+},
   data() {
     return {
-      task: [], // just define task array
+      tasks: [], // just define task array
     };
   },
   created() {
     // like a useEffect in React
-    this.task = [
+    this.tasks = [
       {
         id: 1,
         text: "Doctors Appointment",
