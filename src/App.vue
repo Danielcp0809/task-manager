@@ -1,19 +1,46 @@
 <template>
   <div class="container">
-    <Header title="Task manager"/>
+    <Header title="Task manager" />
   </div>
 </template>
 
 <script>
-
-import Header from './components/Header.vue'
+import Header from "./components/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-}
-}
+  },
+  data() {
+    return {
+      task: [], // just define task array
+    };
+  },
+  created() {
+    // like a useEffect in React
+    this.task = [
+      {
+        id: 1,
+        text: "Doctors Appointment",
+        day: "March 1st at 2:30pm",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "Meeting at School",
+        day: "March 3rd at 1:30pm",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "Food Shopping",
+        day: "March 3rd at 11:00AM",
+        reminder: false,
+      },
+    ];
+  },
+};
 </script>
 
 <style>
@@ -26,17 +53,17 @@ export default {
   margin-top: 60px;
 }
 
-*{
+* {
   box-sizing: border-box;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
-body{
+body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
-.container{
+.container {
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
@@ -45,7 +72,7 @@ body{
   padding: 30px;
   border-radius: 5px;
 }
-.btn{
+.btn {
   display: inline-block;
   background: #000;
   color: #fff;
@@ -59,15 +86,15 @@ body{
   font-family: inherit;
 }
 
-.bth:focus{
+.bth:focus {
   outline: none;
 }
 
-.btn:active{
+.btn:active {
   transform: scale(0.98);
 }
 
-.btn-block{
+.btn-block {
   display: block;
   width: 100%;
 }
