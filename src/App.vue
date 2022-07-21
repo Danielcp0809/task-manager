@@ -1,12 +1,18 @@
 <template>
-  <h1>HelloWorld</h1>
+  <div class="container">
+    <Header title="Task manager"/>
+  </div>
 </template>
 
 <script>
 
+import Header from './components/Header.vue'
+
 export default {
   name: 'App',
-  components: {}
+  components: {
+    Header,
+}
 }
 </script>
 
